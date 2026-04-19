@@ -16,10 +16,14 @@ st.set_page_config(page_title="Zomato API Streamlit Backend", page_icon="🍔", 
 st.title("Zomato Recommender - Streamlit App")
 st.write("This is the Streamlit deployment for the Next.js frontend to link to or for testing the recommendation engine directly.")
 
+from pathlib import Path
+
 @st.cache_resource
 def get_system_state():
-    cfg = load_config()
-    catalog_df = load_catalog(cfg=cfg)
+    repo_dir = Path(__file__).parent.resolve()
+    cfg_file = repo_dir / "config.yaml"
+    cfg = load_config(cfg_file)
+    catalog_df = load_catalog(cfg=cfg, project_root=repo_dir)
     return cfg, catalog_df
 
 try:
