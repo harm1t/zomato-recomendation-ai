@@ -11,6 +11,9 @@ from pydantic import BaseModel, Field
 
 def repo_root() -> Path:
     """Repository root (contains ``config.yaml``, ``data/``, ``scripts/``)."""
+    cwd = Path.cwd()
+    if (cwd / "config.yaml").exists() and (cwd / "data").exists():
+        return cwd
     # src/restaurant_rec/core/config.py -> parents[3] == repo root
     return Path(__file__).resolve().parents[3]
 
