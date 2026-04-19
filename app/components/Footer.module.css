@@ -1,0 +1,56 @@
+.footer {
+  background: white;
+  padding: 3rem 4rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--zomato-red);
+  font-style: italic;
+  letter-spacing: -0.5px;
+}
+
+.aiTag {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--zomato-red);
+}
+
+.copyright {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}

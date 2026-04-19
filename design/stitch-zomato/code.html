@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqiHoh7jaGQU3FqurziyIDY-Zuxe24pTiPkyPwnVfcPi5dwgNe5pVcE0bIdhVHMn8xSTb7jZpS5rFdNUXquB14Ep9FO7dA_LKYrJPgWXp9A84SB4IDpFNSu5q1tQ1iShNB8zC95nIRzkeNaC8hIWmlMlepn4lin5YO5cszE1YqGJ4c6zMLaVVquU1xcJi6BcZd29hrci3mzq6ee_SupmfnZyB4y8iTnG_ssub3322X-6LDYt2eqvYlsq9vcJ92Bog20wKaarWlY5E');
+            background-size: cover;
+            background-position: center;
+        }
+        .zomato-red {
+            background-color: #E23744;
+        }
+        .text-zomato-red {
+            color: #E23744;
+        }
+        .border-zomato-red {
+            border-color: #E23744;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#E23744",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f7",
+                        "on-surface": "#1c1c1c",
+                        "secondary": "#5f5e5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2.5rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-[#f4f4f2] font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-white shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-12">
+<div class="flex items-center">
+<span class="text-2xl font-black text-primary italic tracking-tight">zomato</span>
+<span class="ml-2 font-bold text-gray-800">AI</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="text-gray-600 font-medium hover:text-primary transition-colors" href="#">Dining Out</a>
+<a class="text-gray-600 font-medium hover:text-primary transition-colors" href="#">Delivery</a>
+<a class="text-gray-600 font-medium hover:text-primary transition-colors" href="#">Profile</a>
+</div>
+</div>
+<div class="flex items-center gap-4 text-gray-600">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="hero-bg min-h-[700px] flex items-center justify-center py-20 px-6">
+<div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl overflow-hidden p-8 md:p-12">
+<h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8 tracking-tight">
+                Find Your Perfect Meal with Zomato AI
+            </h1>
+<!-- Natural Language Search Bar -->
+<!-- Quick Select Chips -->
+<!-- Filter Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<!-- Locality -->
+<div class="space-y-1.5">
+<label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Locality</label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 font-medium appearance-none focus:ring-1 focus:ring-primary focus:border-primary">
+<option>(e.g. Banashankari)</option>
+<option>Indiranagar</option>
+<option>Koramangala</option>
+<option>Whitefield</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Cuisine -->
+<div class="space-y-1.5">
+<label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Cuisine</label>
+<input class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 font-medium focus:ring-1 focus:ring-primary focus:border-primary" placeholder="(e.g. North Indian)" type="text"/>
+</div>
+<!-- Budget -->
+<div class="space-y-1.5">
+<label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Min Budget (₹)</label>
+<input class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 font-medium focus:ring-1 focus:ring-primary focus:border-primary" placeholder="0" type="number"/>
+</div>
+<div class="space-y-1.5">
+<label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Max Budget (₹)</label>
+<input class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 font-medium focus:ring-1 focus:ring-primary focus:border-primary" placeholder="1000" type="number"/>
+</div>
+<!-- Specific Cravings -->
+<div class="space-y-1.5">
+<label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Min Rating (1-5)</label>
+<div class="relative">
+<input class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 font-medium focus:ring-1 focus:ring-primary focus:border-primary pl-10" max="5" min="1" placeholder="4.0" step="0.1" type="number"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" data-icon="star">star</span>
+</div>
+</div><div class="space-y-1.5">
+<label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest">Specific Cravings</label>
+<input class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 font-medium focus:ring-1 focus:ring-primary focus:border-primary" placeholder="(e.g. Biryani, Butter Chicken)" type="text"/>
+</div>
+</div>
+<!-- More Options -->
+<div class="mt-6 flex items-center gap-2 cursor-pointer group py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-0.5" data-icon="play_arrow">play_arrow</span>
+<span class="text-sm font-bold text-gray-600">More options</span>
+</div>
+<!-- Primary CTA -->
+<div class="mt-10">
+<button class="w-full zomato-red text-white py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
+                    Get Recommendations
+                </button>
+</div>
+</div>
+</header>
+<!-- Results Section -->
+<section class="max-w-7xl mx-auto py-16 px-6">
+<div class="mb-10">
+<h2 class="text-2xl font-extrabold text-gray-900">Personalized Picks for You</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Restaurant Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col sm:flex-row">
+<div class="sm:w-48 h-48 sm:h-auto">
+<img alt="Saffron &amp; Sage" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0lWSHY5duqffOpnVZFvwluD8LjEJ9gOH6FtO2IAb29rdCcAfX1FM6PU0_lHubIQNF-Ht7n3SYY7Crzm9N0Yiiu4Tx8AcCgkxIOyL-Cc3jAdBuzAL5cNTxKMpD1Zf7lTPIxLsOaAoTGe8Htn6eAcpHvThxdDBuyP1OX23qKStg6wpRdKke2cVgUSGsRKW-MKvhCaZwZtw0WZ0Fy5gx6XAOON02-2iS44bYSYN6jKdJzTKtxHYr23xl4V7f_uoVhOOlqCwt_B7rGU0"/>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-gray-900">Saffron &amp; Sage</h3>
+<p class="text-gray-500 text-sm mt-1">Modern Indian • ₹1200 for two</p>
+</div>
+<div class="bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1 text-sm font-bold">
+                            4.8 <span class="material-symbols-outlined text-[14px] fill-current" data-icon="star">star</span>
+</div>
+</div>
+<div class="mt-4 bg-gray-50 p-4 rounded-xl border border-gray-100 flex gap-3">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="text-xs text-gray-600 leading-relaxed">
+<span class="font-bold text-gray-900 block mb-1">AI Reason:</span>
+                            Based on your love for aromatic spices and slow-cooked dishes like Biryani. This spot's rooftop ambiance also fits your 'outdoor' history.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Restaurant Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col sm:flex-row">
+<div class="sm:w-48 h-48 sm:h-auto">
+<img alt="The Glass House" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuBA6jG7SP4I0at_m2vB0KMX_hUbITJDI2BF-11hrQaG1F1UJy6ASXQ6Zjo3BKU_fmINfny0EpV3ApdWL3vI1_yec_0TJ-DKmQARs_RJN0ojE9UZQtgMCCkZWvqJm_MDg7LfEq0pnSwH28gpC_FvWJ3FYH-c1YpvWd0bbdN0jVp4Q3IfTcbHgnJnE1-VSI4NvZTlO6L2HyvI8znbmrICNWxRkcH1lPBgYtHYD1anUr_7FmNn29Lnm3Q9OqjeTvU4Hlf6wAx12PsYw"/>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-gray-900">The Glass House</h3>
+<p class="text-gray-500 text-sm mt-1">European Fusion • ₹1800 for two</p>
+</div>
+<div class="bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1 text-sm font-bold">
+                            4.6 <span class="material-symbols-outlined text-[14px] fill-current" data-icon="star">star</span>
+</div>
+</div>
+<div class="mt-4 bg-gray-50 p-4 rounded-xl border border-gray-100 flex gap-3">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="text-xs text-gray-600 leading-relaxed">
+<span class="font-bold text-gray-900 block mb-1">AI Reason:</span>
+                            You enjoy Italian cuisine and frequent fast food; this fusion spot offers a sophisticated twist on your favorite flavor profiles.
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 bg-white border-t border-gray-200">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center">
+<span class="text-2xl font-black text-primary italic tracking-tight">zomato</span>
+<span class="ml-2 font-bold text-gray-800">AI</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">AI Methodology</a>
+<a class="text-sm font-medium text-gray-500 hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-gray-100 text-center text-xs text-gray-400 font-medium">
+                © 2024 The Intelligent Epicurean. An AI-Driven Gastronomic Concierge powered by Zomato.
+            </div>
+</div>
+</footer>
+</body></html>

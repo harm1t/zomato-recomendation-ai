@@ -1,0 +1,35 @@
+paths:
+  # Written by scripts/ingest_zomato.py (Phase 1 catalog artifact)
+  processed_catalog: data/processed/restaurants.parquet
+
+dataset:
+  hf_name: ManikaSaini/zomato-restaurant-recommendation
+  split: train
+
+# INR: cost_for_two <= low_max -> low; <= medium_max -> medium; else high
+budget_tiers:
+  low_max_inr: 400
+  medium_max_inr: 800
+
+# Normalize alternate spellings to a single display/filter token (optional)
+city_aliases:
+  Bengaluru: Bangalore
+  bengaluru: Bangalore
+
+rating:
+  min_valid: 0.0
+  max_valid: 5.0
+
+# Phase 2: shortlist passed to LLM (not user-editable)
+filter:
+  max_shortlist_candidates: 40
+  relax_min_rating: false
+  min_rating_relax_delta: 0.5
+
+# Phase 3: Gemini (API key in .env — GOOGLE_API_KEY or GEMINI_API_KEY)
+gemini:
+  model: gemini-2.0-flash
+  temperature: 0.3
+  max_output_tokens: 2048
+  top_k_recommendations: 5
+  prompt_version: v1

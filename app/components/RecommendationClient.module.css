@@ -1,0 +1,73 @@
+.heroSection {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #111;
+  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+.heroTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+.errorBanner {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.resultsSection {
+  background: var(--bg-light);
+  padding: 4rem 2rem;
+  flex: 1;
+}
+
+.resultsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resultsTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.resultsSummary {
+  color: var(--text-gray);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
